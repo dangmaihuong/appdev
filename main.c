@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "sound.h"
 #include <signal.h>
-
+#include "comm.h"
 int main(){
 	FILE *f = fopen("test.wav", "r");
 	short sd[RATE];
@@ -32,6 +32,7 @@ int main(){
 		fclose(f);
 		displayWAVHDR(hdr);
 		displayWAVdata(sd);
+		sendDATA(sd);
 	}
 	resetColors();
 //	getchar();

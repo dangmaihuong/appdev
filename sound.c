@@ -46,12 +46,18 @@ void displayWAVHDR(struct WAVHDR h){
 	printf("\033[1;41H");
 	printf("Duration:%.2f     ", (float)h.subChunk2Size/h.byteRate);
 	setColors(RED, bg(YELLOW));
-	setColors(BLACK, bg(WHITE));
-	printf("\033[1;59H");
-	printf("Number of peak:     ");
 #endif
+}
 
-
+//This funstion is only called by displayWAVDATA(), so no need to$
+//This funstion finds how many peaks from 80-pieces of decibel va$
+int findPeaks(int d[]){
+    int c = 0, i;
+    for(i=1; i<80; i++){
+        if(d[i]>=75 && d[i-1]<75)   c++;
+    }
+    if(d[0]>75) c++;
+    return c;
 }
 
 //this function gets 1 second of sample (16000 samples) and calculate 80 pieces of decimal values
@@ -76,5 +82,10 @@ void displayWAVdata(short s[]){
 	}
 #ifndef DEBUG
 	barChart(dB);
+	int peaks = findPeaks(dB);
+    setColors(WHITE, bg(BLACK));
+    printf("\033[1;61H");
+    printf("Peaks: %d           \n", peaks);
+
 #endif
 }
