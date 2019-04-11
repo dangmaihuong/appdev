@@ -26,4 +26,4 @@ struct WAVHDR{
 void displayWAVHDR(struct WAVHDR);
 void showID(char *, char *);
 void displayWAVdata(short[]);
-
+void testTone(int ch, int fl, int fr, float dur);
