@@ -3,6 +3,8 @@
 #define RATE 16000
 #define DUR 5
 #define RCMD "arecord -r16000 -c1 -f S16_LE -d1 -q test.wav"
+#define PI 3.14159
+
 // data structures
 struct WAVHDR{
 	char chunkID[4];	// must be RIFF
