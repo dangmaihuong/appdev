@@ -3,12 +3,65 @@
 This application offers a possibility to turn a Raspberry Pi as a sound device. 
 The application comes with 2 function: a sound collector and a test tone generator.
 
-List of Cotent
-	1. Configuration Instruction
-	2. Installation Instruction
-	3. Operating Instruction
-	4. List of Files
-	5. Copyright / Copyleft
-	6. Contact Information
-	7. Credits and Acknowledgements
+List of Cotent:
 
+1. Configuration Instruction: 
+		Raspberrypi:
+			Model Name: ARMv7 Processor rev 4 (v71) 
+		USB Sound Card
+			Name: Deltaco UAC-03 rev 3
+		Headphone
+		Microphone
+		Ethernet connection
+2. Installation Instruction:
+		Install the newest NOOBS version for Raspberrypi: 
+			https://www.raspberrypi.org/downloads/noobs/
+		Raspberry Default Booting & Keyboard Layout
+		Set USB Sound Card as Default
+		Install libcurl
+3. Operating Instruction:
+		To clone all the needed file to run the project:
+			Command: "git clone https://github.com/dangmaihuong/appdev"
+	or
+		The source code from: Github
+			User name: dangmaihuong.study@gmail.com
+	
+		The php and txt file: shell.puv.fi
+			User name: e1800943	
+	
+		To run the project:
+			To compile all the file: "make" command
+			And run "./sound.out" or "./sound.out arg" to run 2 functions of this project:
+				"./sound.out": To record and display the sound frequency as a bar chart.
+				"./sound.out arg": To ask user enter properties about wanted sound and play its as testTone
+					When you want to play the sound:
+						Enter command "scp testTone.wav emailaddress:."
+						Enter the home folder to find the testTone.wav file and play the sound
+			To check the frequency any second after run "./sound.out": Open test.curl.txt
+			After running the project and user want to clear the maked file, using "make clean" command
+4. List of Files (Manifest):
+		main.c: Main function of the project
+		screen.c: Displaying the bar chart 
+		sound.c: Sound analyzing
+		testcurl.c: Testing curl
+		comm.c: Communication with users
+		screen.h: Header of screen.c
+		comm.h: Header of comm.c
+		README: Instruction and Information
+		makefile: To make file of the project
+		sound.php: The php code for receiving the sound
+		testcurl.txt: Display the frequency of the received sound
+5. Copy right / Copyleft:
+		Dang Mai Huong
+		e1800943
+6. Contact Information: 
+		Dang Mai Huong
+		e1800943@edu.vamk.fi
+7. Credits and Acknowledgements:
+		Made by: Dang Mai Huong - e1800943
+		Knowledge from help of Mr.Gao Chao - Teacher of Application Development
+		To make this project: Needed information and acknowlegdement of:
+			RaspberryPi
+			C programming
+			PHP programming
+			
